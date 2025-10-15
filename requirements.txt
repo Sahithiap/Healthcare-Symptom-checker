@@ -4,5 +4,6 @@ numpy
 python-dotenv
 requests
 scikit-learn
-openai
 huggingface_hub
+transformers
+torch
