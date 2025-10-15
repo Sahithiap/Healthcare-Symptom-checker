@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+python-dotenv
+requests
+scikit-learn
+openai
+huggingface_hub
