@@ -13,7 +13,7 @@ load_dotenv()
 
 # ------------------ Config ------------------
 DB_PATH = os.getenv("SYMPTOM_DB", "symptoms_history.db")
-HF_TOKEN = os.getenv("HF_TOKEN", "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")
+HF_TOKEN = os.getenv("HF_TOKEN", None)
 MODEL_NAME = os.getenv("HF_MODEL_NAME", "gpt2")
 MAX_CONDITIONS = 5
 
@@ -120,7 +120,7 @@ try:
     model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, use_auth_token=HF_TOKEN)
     generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 except Exception as e:
-    st.warning(f"Failed to load HF model, using mock responses. Error: {e}")
+    st.warning(f"using mock responses")
     generator = None
 
 def call_llm_json(prompt: str, timeout_sec: int = 15) -> Dict[str, Any]:
@@ -279,5 +279,6 @@ with col2:
 
 st.markdown("---")
 st.caption("Made with ❤️. Educational only. Not a substitute for medical advice.")
+
 
 
