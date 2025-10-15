@@ -13,7 +13,7 @@ load_dotenv()
 
 # ------------------ Config ------------------
 DB_PATH = os.getenv("SYMPTOM_DB", "symptoms_history.db")
-HF_TOKEN = os.getenv("HF_TOKEN", None)
+HF_TOKEN = os.getenv("HF_TOKEN", "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")
 MODEL_NAME = os.getenv("HF_MODEL_NAME", "EleutherAI/gpt-neo-125M")
 MAX_CONDITIONS = 5
 
@@ -279,3 +279,4 @@ with col2:
 
 st.markdown("---")
 st.caption("Made with ❤️. Educational only. Not a substitute for medical advice.")
+
